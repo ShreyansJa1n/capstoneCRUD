@@ -120,3 +120,21 @@ class HomePage(View):
                 v.save()
 
             return render(request, 'index.html', {'msg': 'Updated successfully', 'dish': d})
+
+        elif request.POST['button'] == "See all the records":
+            d = dish.objects.all()
+            return render(request, 'allrecords.html', {'dish': d})
+
+        # elif request.POST['button'] == "See all the records":
+        #     d = dish.objects.all()
+        #     return render(request, 'allrecords.html', {'dish': d})
+
+
+class showrec(View):
+    def get(self, request, pk):
+        d = dish.objects.get(pk=pk)
+        v = vegetables.objects.filter(vegedish=pk)
+        vegenames = []
+        for i in range(len(v)):
+            vegenames.append(v[i].vegename)
+        return render(request, 'select.html', {"dish": d, "vegetables": vegenames})
