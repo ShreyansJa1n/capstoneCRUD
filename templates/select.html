@@ -36,7 +36,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <form enctype="multipart/form-data" method="POST" action="">
+        <form enctype="multipart/form-data" method="POST" action="/">
           {% csrf_token %}
           <div class="container">
             <div class="form-row" style="padding-bottom: 13px">
@@ -325,6 +325,12 @@
                 <div class="form-row" style="padding: 10px;">
                     <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="Delete the records" type="submit"/></div>
                 </div>
+                <div class="form-row" style="padding: 10px;">
+                  <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="Add the record" type="submit"/></div>
+              </div>
+              <div class="form-row" style="padding: 10px;">
+                <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="See all the records" type="submit"/></div>
+            </div>
 
             </div>
             </div>

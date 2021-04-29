@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CRUDProject</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Antic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Libre">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Menu.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="col-md-12" style="padding-bottom: 13px;">
+        <h1 class="text-center">Restaurant Management</h1>
+        <h3 style="text-align: center;padding-top: 34px;padding-bottom: 17px;">All records</h3>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Dish Name</th>
+                    <th>Image</th>
+                    <th>Chef</th>
+                    <th>More</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in dish %}
+                <tr>
+                    <td>{{i.idF}}</td>
+                    <td>{{i.name}}</td>
+                    <td class="text-center"><img src="{{i.image.url}}"></td>
+                    <td>{{i.chef}}</td>
+                    <td><a href="showrec/{{i.idF}}" class="btn btn-primary">More info</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

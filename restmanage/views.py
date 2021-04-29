@@ -125,9 +125,11 @@ class HomePage(View):
             d = dish.objects.all()
             return render(request, 'allrecords.html', {'dish': d})
 
-        # elif request.POST['button'] == "See all the records":
-        #     d = dish.objects.all()
-        #     return render(request, 'allrecords.html', {'dish': d})
+        elif request.POST['button'] == "Delete the records":
+            idf = request.POST['id']
+            d = dish.objects.get(pk=idf)
+            d.delete()
+            return render(request, 'index.html', {'msg': 'Deleted'})
 
 
 class showrec(View):
