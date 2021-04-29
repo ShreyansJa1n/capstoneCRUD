@@ -263,7 +263,8 @@
                     >Garlic</label
                   >
                 </div>
-                {% endif %} {% if "Tomatoes" in vegetables %}
+                {% endif %} 
+                {% if "Tomatoes" in vegetables %}
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -300,6 +301,7 @@
                   class="form-control"
                   name="date"
                   type="date"
+                  placeholder="{{dish.dateAdded}}"
                 />
                 <p>Current value: {{dish.dateAdded}}</p>
               </div>
@@ -313,14 +315,23 @@
               </div>
             </div>
             <div class="form-row">
-              <div class="col" style="text-align: center">
-                <input class="btn btn-primary" type="submit" />
-              </div>
+              <div class="row" style="text-align: center;">
+                <div class="form-row" style="padding: 10px;">
+                    <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="See another record" type="submit"/></div>
+                </div>
+                <div class="form-row" style="padding: 10px;">
+                    <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="Update the record" type="submit"/></div>
+                </div>
+                <div class="form-row" style="padding: 10px;">
+                    <div class="col" style="text-align: center;"><input class="btn btn-primary" name="button" value="Delete the records" type="submit"/></div>
+                </div>
+
+            </div>
             </div>
           </div>
         </form>
       </div>
-      <div class="col text-center"><img /></div>
+      <div class="col text-center"><img src={{dish.img.url}}/></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
